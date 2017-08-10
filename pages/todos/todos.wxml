@@ -1,0 +1,17 @@
+<!--todo.wxml-->
+<view class="page__bd">
+  <view class="weui-cells__title">待办事项列表</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="todo-item weui-cell" wx:for="{{todos}}" wx:for-item="todo" wx:for-index="index" wx:key="{{index}}">
+      <view class="weui-cell__bd">{{todo.content}}</view>
+      <icon class="weui-cell__ft" type="cancel" size="23" data-index="{{index}}" bindtap="bindDelTodoTap">删除</icon>
+    </view>
+  </view>
+  <view class="weui-cells__title">添加待办事项</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <input class="add-todo weui-input weui-cell__bd" value="{{todo.content}}" placeholder="请输入待办项" bindinput="bindAddTodoInput" />
+      <button class="weui-cell__ft" type="default" size="mini" bindtap="bindAddTodoTap">添加</button>
+    </view>
+  </view>
+</view>
