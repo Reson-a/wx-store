@@ -27,7 +27,7 @@ module.exports = class Store {
     })
   }
 
-  // state映射
+  // 根据keys获取state
   getState(keys) {
     let state = this.state
     let data = {}
@@ -35,7 +35,7 @@ module.exports = class Store {
     return data
   }
 
-  // 页面show时更新页面data
+  // 映射state到实例中，可在onload或onshow中调用
   mapState(keys, ctx) {
     if (!ctx || typeof ctx.setData !== 'function') return
     ctx.setData(this.getState(keys))
